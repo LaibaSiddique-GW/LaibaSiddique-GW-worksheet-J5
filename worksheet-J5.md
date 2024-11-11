@@ -8,15 +8,58 @@ In the 1990's, as others were starting to use computers at home and using progra
 
 ## 2.) What is the relationship between `WindowListener` and `WindowAdapter`?
 
-
+WindowListener is an interface, and WindowAdapter is an extendable class that implements WindowListener allowing you to only write code for the methods you want implemented. 
 
 ## 3.) What does the program below produce for a GUI? (You can sketch and upload an image or describe it – do this without running the program to make sure you understand what each line below is doing).
 
-
+_Attached in the Zip File Submission._
 
 ## 4.) Modify the `HelloGoodbyeEx2` code to update the number of times the button has been clicked on the button’s label itself.
 
+```
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
+public class HelloGoodbyeEx2 {
+
+    public static void main(String args[]) {
+        JFrame f = new JFrame();
+        f.setTitle("Hello/Goodbye Ex1");
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        JLabel label = new JLabel("Hello");
+        JButton button = new JButton("Click me!");
+
+        // num times clicked
+        int count = 0;
+
+        //using an anonymous (static) class
+        //avoids having to make ButtonClickListenerEx1 class above
+        button.addActionListener(new ActionListener() {
+                //implement the one method here
+                //shares the name space with the whole class
+                //has access to the label field above
+                public void actionPerformed(ActionEvent e) {
+                    if (label.getText().equals("Hello")) {
+                        label.setText("Goodbye");
+                    }else {
+                        label.setText("Hello");
+                    }
+                    count++;
+                    button.setText("Click Me!" + count);
+                }
+            });
+        
+        f.add(button, BorderLayout.SOUTH);
+        f.add(label, BorderLayout.NORTH);
+
+        f.pack();
+        f.setVisible(true);
+        
+    }
+}
+```
 
 ## 5.) Consider the following Java swing GUI. Convert the `ActionListeners` to Lambda Functions.
 
