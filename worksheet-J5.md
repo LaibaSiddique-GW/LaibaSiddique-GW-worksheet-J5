@@ -3,7 +3,8 @@
 
 ## 1.) How does object-oriented programming pair so closely with GUIs?
 
-
+In the 1990's, as others were starting to use computers at home and using programmigns, JAVA and GUIs were on the rise, and GUIs allow people to use programs without knowing the insides. This relates to information hiding and abstracting things away, which OOP does. 
+(JAVA swing library provides and API to seamlessley use GUIs.)
 
 ## 2.) What is the relationship between `WindowListener` and `WindowAdapter`?
 
