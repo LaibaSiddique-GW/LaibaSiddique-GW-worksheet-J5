@@ -63,13 +63,23 @@ public class HelloGoodbyeEx2 {
 
 ## 5.) Consider the following Java swing GUI. Convert the `ActionListeners` to Lambda Functions.
 
+```
+red.addActionListener(e) -> {
+    label.setText("RED");
+}
+```
 
+```
+blue.addActionListener(e) -> {
+    label.setText("BLUE");
+}
+```
 
 ## 6.) Explain why for `ActionListener` you can use a Lambda function but for `WindowListener` you cannot?
 
-
+ActionListener only requires 1 (i.e. a single) method to be realized: actionPerformed. So, Lambda knows what method to call. Whereas, WindowListener has multiple methods that need to be realized; so, Lambda does not know which method to call. 
 
 ## 7.) Write a program that allows you to enter a 6-digit PIN, like you would on your smartphone to unlock it. It should have the following layout: Where `[ < ]` is a “backspace” button. The display should show the PIN as it is typed, and when the user enters the PIN 202113, the display changes to “YOU MAY ENTER!”
 
-
+_Code Attached in Zip File Submission._
 
